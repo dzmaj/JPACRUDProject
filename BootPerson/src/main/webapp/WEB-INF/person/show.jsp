@@ -12,6 +12,7 @@
 		<c:when test="${not empty person }">
 			<div class="container">
 				<h5>${person.firstName} ${person.lastName }</h5>
+			<a href="update.do?pid=${person.id }">Update</a>
 				<p>ID: ${person.id}</p>
 			</div>
 

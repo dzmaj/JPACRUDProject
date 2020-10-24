@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jpacrud.data.PersonDAO;
 import com.skilldistillery.jpacrud.entities.Person;
@@ -22,7 +24,7 @@ public class PersonController {
 	}
 	
 	@RequestMapping(path = "getPerson.do")
-	public String showFilm(Integer pid, Model model) {
+	public String show(Integer pid, Model model) {
 		Person person = personDao.findById(pid);
 		model.addAttribute("person", person);
 		return "person/show";
@@ -43,9 +45,51 @@ public class PersonController {
 	}
 	
 	@RequestMapping(path = "listPeople.do")
-	public String listAll(String lname, Model model) {
+	public String listAll(Model model) {
 		List<Person> people = personDao.getAllPeople();
 		model.addAttribute("people", people);
 		return "person/results";
 	}
+	
+	// to update page
+	@RequestMapping(path = "update.do")
+	public String update(Integer pid, Model model) {
+		Person person = personDao.findById(pid);
+		model.addAttribute("person", person);
+		return "person/update";
+	}
+	
+	// from update page
+	@RequestMapping(path = "updated.do", method = RequestMethod.POST)
+	public String updated(Person person, Model model) {
+		person = personDao.update(person.getId(), person);
+		model.addAttribute("person", person);
+		return "person/show";
+	}
+	
+	
+	@RequestMapping(path = "newPerson.do", method = RequestMethod.POST)
+	public String newPerson(Person person, RedirectAttributes redir) {
+		
+		personDao.create(person);
+		redir.addFlashAttribute("person", person);
+		return "redirect:personAdded.do";
+	}
+	
+	  /*
+	  @RequestMapping(path = "NewState.do", method = RequestMethod.POST)
+	  public String newState(State state, RedirectAttributes redir) {
+	    stateDAO.addState(state);
+	    redir.addFlashAttribute("state", state);
+	    return "redirect:stateAdded.do";
+	  }
+
+	  // Note: This does not use an InternalResourceViewResolver
+	  @RequestMapping("stateAdded.do")
+	  public ModelAndView stateAdded() {
+	    ModelAndView mv = new ModelAndView();
+	    mv.setViewName("WEB-INF/result.jsp");
+	    return mv;
+	  }
+	  */
 }

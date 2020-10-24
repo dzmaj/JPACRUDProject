@@ -60,12 +60,19 @@ public class PersonDAOJpaImpl implements PersonDAO {
 		if (dbPerson == null) {
 			return null;
 		}
-		em.getTransaction().begin();
+//		em.getTransaction().begin();
 		// assign all the data from the sent in actor to the one in the database
 		dbPerson.setFirstName(person.getFirstName());
 		dbPerson.setLastName(person.getLastName());
+		dbPerson.setExpression(person.getExpression());
+		dbPerson.setEyeColor(person.getEyeColor());
+		dbPerson.setSkinColor(person.getSkinColor());
+		dbPerson.setArmThickness(person.getArmThickness());
+		dbPerson.setLegThickness(person.getLegThickness());
+		dbPerson.setTorsoThickness(person.getTorsoThickness());
+		dbPerson.setEyeSize(person.getEyeSize());
 		em.flush();
-		em.getTransaction().commit();
+//		em.getTransaction().commit();
 		return dbPerson;
 	}
 
