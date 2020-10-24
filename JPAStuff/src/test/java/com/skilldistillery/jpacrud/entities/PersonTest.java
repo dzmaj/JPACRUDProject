@@ -40,13 +40,24 @@ class PersonTest {
 		person = null;
 		em.close();
 	}
+	
+	//# id	first_name	last_name	torso_thickness	leg_thickness	arm_thickness	eye_color	eye_size	expression	skin_color
+	//	1	George		Jenkins		5.5				2				2				green		10			smile		Orange
 
 	@Test
 	@DisplayName("test person entity")
 	void test1() {
 		assertNotNull(person);
-		assertEquals("George", person.getFirstName());
 		assertEquals(1, person.getId());
+		assertEquals("George", person.getFirstName());
+		assertEquals("Jenkins", person.getLastName());
+		assertEquals(5.5, person.getTorsoThickness());
+		assertEquals(2, person.getLegThickness());
+		assertEquals(2, person.getArmThickness());
+		assertEquals("green", person.getEyeColor());
+		assertEquals(10, person.getEyeSize());
+		assertEquals("smile", person.getExpression());
+		assertEquals("Orange", person.getSkinColor());
 	}
 
 }
