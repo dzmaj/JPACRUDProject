@@ -11,6 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.skilldistillery.jpacrud.data.PersonDAO;
 import com.skilldistillery.jpacrud.entities.Person;
+import com.skilldistillery.jpacrud.options.Options;
 
 @Controller
 public class PersonController {
@@ -64,6 +65,8 @@ public class PersonController {
 	public String update(Integer pid, Model model) {
 		Person person = personDao.findById(pid);
 		model.addAttribute("person", person);
+		model.addAttribute("colorList", Options.getColorList());
+		model.addAttribute("expressionList", Options.getExpressionList());
 		return "person/update";
 	}
 

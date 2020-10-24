@@ -23,8 +23,27 @@
 </tr>
 <tr>
 	<td><form:label path="eyeColor">Eye Color</form:label></td>
-	<td><form:input path="eyeColor" value="${person.eyeColor }"/></td>
+	<td><form:select path="eyeColor">
+		<form:option value="${person.eyeColor }"/>
+		<form:options items="${colorList }"/>
+	</form:select></td>
 	<td><form:errors path="eyeColor"/></td>
+</tr>
+<tr>
+	<td><form:label path="skinColor">Face Color</form:label></td>
+	<td><form:select path="skinColor">
+		<form:option value="${person.skinColor }"/>
+		<form:options items="${colorList }"/>
+	</form:select></td>
+	<td><form:errors path="skinColor"/></td>
+</tr>
+<tr>
+	<td><form:label path="expression">Expression</form:label></td>
+	<td><form:select path="expression">
+		<form:option value="${person.expression }"/>
+		<form:options items="${expressionList }"/>
+	</form:select></td>
+	<td><form:errors path="expression"/></td>
 </tr>
 
 
@@ -32,8 +51,6 @@
 
 </table>
 
-<input type="hidden" name="expression" value="${person.expression }" />
-<input type="hidden" name="skinColor" value="${person.skinColor }" />
 <input type="hidden" name="torsoThickness" value="${person.torsoThickness }" />
 <input type="hidden" name="legThickness" value="${person.legThickness }" />
 <input type="hidden" name="armThickness" value="${person.armThickness }" />
