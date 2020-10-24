@@ -82,11 +82,9 @@ public class PersonDAOJpaImpl implements PersonDAO {
 		if (person == null) {
 			return false;
 		}
-		em.getTransaction().begin();
 		em.remove(person);
 		boolean wasDeleted = ! em.contains(person);
 		em.flush();
-		em.getTransaction().commit();
 		return wasDeleted;
 	}
 	

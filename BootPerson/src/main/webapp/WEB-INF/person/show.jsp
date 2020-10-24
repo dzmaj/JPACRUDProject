@@ -13,6 +13,7 @@
 			<div class="container">
 				<h5>${person.firstName} ${person.lastName }</h5>
 			<a href="update.do?pid=${person.id }">Update</a>
+			<a href="delete.do?pid=${person.id }">Delete</a>
 				<p>ID: ${person.id}</p>
 			</div>
 
