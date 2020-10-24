@@ -16,7 +16,6 @@ public class PersonController {
 	
 	@RequestMapping(path = "/")
 	public String index() {
-		
 		return "index";
 	}
 	
