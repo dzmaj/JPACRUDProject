@@ -16,7 +16,7 @@
 		</thead>
 			<c:forEach items="${people }" var="p">
 				<tr>
-					<td>${p.id }</td><td><a href="getPerson.do?id=${p.id }">${p.firstName } ${p.lastName }</a>
+					<td>${p.id }</td><td><a href="getPerson.do?pid=${p.id }">${p.firstName } ${p.lastName }</a>
 				</tr>
 			</c:forEach>
 	
