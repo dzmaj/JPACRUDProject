@@ -45,7 +45,7 @@ class PersonTest {
 	@DisplayName("test person entity")
 	void test1() {
 		assertNotNull(person);
-		assertEquals("George", person.getName());
+		assertEquals("George", person.getFirstName());
 		assertEquals(1, person.getId());
 	}
 

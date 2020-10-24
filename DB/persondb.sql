@@ -22,7 +22,15 @@ DROP TABLE IF EXISTS `person` ;
 
 CREATE TABLE IF NOT EXISTS `person` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
+  `first_name` VARCHAR(45) NULL,
+  `last_name` VARCHAR(45) NULL,
+  `torso_thickness` DOUBLE NOT NULL DEFAULT 2.5,
+  `leg_thickness` DOUBLE NOT NULL DEFAULT 2.5,
+  `arm_thickness` DOUBLE NOT NULL DEFAULT 2.5,
+  `eye_color` VARCHAR(45) NOT NULL DEFAULT 'black',
+  `eye_size` VARCHAR(45) NOT NULL DEFAULT '10',
+  `expression` VARCHAR(45) NOT NULL DEFAULT 'neutral',
+  `skin_color` VARCHAR(45) NOT NULL DEFAULT 'green',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -42,7 +50,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `persondb`;
-INSERT INTO `person` (`id`, `name`) VALUES (1, 'George');
+INSERT INTO `person` (`id`, `first_name`, `last_name`, `torso_thickness`, `leg_thickness`, `arm_thickness`, `eye_color`, `eye_size`, `expression`, `skin_color`) VALUES (1, 'George', 'Jenkins', 5.5, 2, 2, 'green', '10', 'smile', 'Orange');
+INSERT INTO `person` (`id`, `first_name`, `last_name`, `torso_thickness`, `leg_thickness`, `arm_thickness`, `eye_color`, `eye_size`, `expression`, `skin_color`) VALUES (2, 'Marty', 'McMuffin', 3, 1, 6, 'blue', '15', 'neutral', 'Wheat');
 
 COMMIT;
 
