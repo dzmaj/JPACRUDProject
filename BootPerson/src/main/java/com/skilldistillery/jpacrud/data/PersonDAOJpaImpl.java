@@ -42,15 +42,8 @@ public class PersonDAOJpaImpl implements PersonDAO {
 
 	@Override
 	public Person create(Person person) {
-		// start the transaction
-	    em.getTransaction().begin();
-	    // write the customer to the database
 	    em.persist(person);
-	    // update the "local" Customer object
 	    em.flush();
-	    // commit the changes (actually perform the operation)
-	    em.getTransaction().commit();
-	    
 	    return person;
 	}
 

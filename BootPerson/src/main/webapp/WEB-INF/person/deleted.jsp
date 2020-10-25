@@ -12,7 +12,8 @@
 	<c:when test="${wasDeleted }">Person was deleted</c:when>
 	<c:otherwise>Unable to delete person</c:otherwise>
 </c:choose>
-<a href="/">Return to index</a>
+<a href="/">Index</a>
+
 
 </body>
 </html>

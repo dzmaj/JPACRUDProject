@@ -93,5 +93,7 @@
 		</c:otherwise>
 
 	</c:choose>
+	<a href="/">Index</a>
+	
 </body>
 </html>

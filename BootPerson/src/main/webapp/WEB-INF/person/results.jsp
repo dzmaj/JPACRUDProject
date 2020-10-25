@@ -21,6 +21,7 @@
 			</c:forEach>
 	
 	</table>
+<a href="/">Index</a>
 
 </body>
 </html>

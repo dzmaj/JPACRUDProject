@@ -77,14 +77,29 @@ public class PersonController {
 		model.addAttribute("person", person);
 		return "person/show";
 	}
-
-	@RequestMapping(path = "newPerson.do", method = RequestMethod.POST)
-	public String newPerson(Person person, RedirectAttributes redir) {
-
-		personDao.create(person);
-		redir.addFlashAttribute("person", person);
-		return "redirect:personAdded.do";
+	
+	@RequestMapping(path = "create.do")
+	public String create(Person person, Model model) {
+		person = personDao.create(person);
+		model.addAttribute("person", person);
+		return "person/show";
 	}
+	@RequestMapping(path = "/create")
+	public String creator(Model model) {
+		Person person = new Person();
+		model.addAttribute("person", person);
+		model.addAttribute("colorList", Options.getColorList());
+		model.addAttribute("expressionList", Options.getExpressionList());
+		return "person/create";
+	}
+
+//	@RequestMapping(path = "create.do", method = RequestMethod.POST)
+//	public String newPerson(Person person, RedirectAttributes redir) {
+//
+//		personDao.create(person);
+//		redir.addFlashAttribute("person", person);
+//		return "redirect:personAdded.do";
+//	}
 
 	/*
 	 * @RequestMapping(path = "NewState.do", method = RequestMethod.POST) public

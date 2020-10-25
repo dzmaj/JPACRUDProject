@@ -33,6 +33,12 @@
 			 <input type="submit"
 				value="List All People" />
 		</form>
+		<br>
+		<h3>Create new person</h3>
+		<form action="/create" method="GET">
+			 <input type="submit"
+				value="Create" />
+		</form>
 	</div>
 
 </body>
