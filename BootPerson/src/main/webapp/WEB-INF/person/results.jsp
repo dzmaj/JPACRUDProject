@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container-fluid">
-<a href="/">Index</a>
+<a href="index.do">Index</a>
 	<table class="table">
 		<thead>
 			<tr>

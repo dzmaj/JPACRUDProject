@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container-fluid">
-<a href="/">Index</a>
+<a href="index.do">Index</a>
 
 <form:form action="create.do" method="POST" modelAttribute="person">
 <table>

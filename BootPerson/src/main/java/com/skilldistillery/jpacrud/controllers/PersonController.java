@@ -23,6 +23,10 @@ public class PersonController {
 	public String index() {
 		return "index";
 	}
+	@RequestMapping(path = "index.do")
+	public String index2() {
+		return "index";
+	}
 
 	@RequestMapping(path = "getPerson.do")
 	public String show(Integer pid, Model model) {

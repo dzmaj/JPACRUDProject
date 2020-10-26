@@ -75,7 +75,7 @@
 <input type="hidden" name="id" value="${person.id }" />
 <input type="submit" value="Update"/>
 
-<a href="/">Index</a>
+<a href="index.do">Index</a>
 </form:form>
 </div>
 <!-- bootstrap -->
