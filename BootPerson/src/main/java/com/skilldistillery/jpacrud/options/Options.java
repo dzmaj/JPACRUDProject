@@ -14,7 +14,7 @@ public class Options {
 	static {
 		colorList = new ArrayList<>();
 		try (BufferedReader br = new BufferedReader(new FileReader(
-				"src" + File.separator + "main" + File.separator + "resources" + File.separator + "colors.txt"))) {
+				"src" + File.separator + "main" + File.separator + "webapp" + File.separator + "colors.txt"))) {
 			String line;
 			while ((line = br.readLine()) != null) {
 				colorList.add(line);
